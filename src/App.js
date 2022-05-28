@@ -1,8 +1,12 @@
+import React from 'react';
 import './App.css';
+import Todo from './components/Todo.js';
 
 function App() {
   return (
-    <></>
+    <>
+      <Todo />
+    </>
   );
 }
 
