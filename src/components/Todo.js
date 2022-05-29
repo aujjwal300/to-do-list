@@ -4,14 +4,28 @@ const Todo = () => {
     const [inputData, setInputData] = useState("");
     const [items, setItems] = useState([]);
 
+    // Add the items function
     const addItem = () => {
         if (!inputData) {
             alert("Plz fill the data!");
         }
         else {
-            setItems([inputData, ...items]);
+            const myNewInputData = {
+                id: new Date().getTime().toString(),
+                name: inputData,
+            };
+            setItems([myNewInputData, ...items]);
             setInputData("");
         }
+    };
+
+    // Delete the items function
+    const deleteItem = (index) => {
+        const updatedItems = items.filter((currElem) => {
+            return currElem.id !== index;
+        });
+
+        setItems(updatedItems);
     };
 
     return (
@@ -32,11 +46,12 @@ const Todo = () => {
                     <div className="showItems">
                         {items.map((currElem, index) => {
                             return (
-                                <div className="eachItem">
-                                    <h3>{currElem}</h3>
+                                <div className="eachItem" key={currElem.id}>
+                                    <h3>{currElem.name}</h3>
                                     <div className="todo-btn">
                                         <i className="far fa-edit" aria-hidden="true"></i>
-                                        <i className="far fa-trash-alt"></i>
+                                        <i className="far fa-trash-alt"
+                                            onClick={() => deleteItem(currElem.id)}></i>
                                     </div>
                                 </div>
                             );
