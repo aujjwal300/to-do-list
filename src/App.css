@@ -21,7 +21,7 @@
 
 .child-div {
     text-align: center;
-    margin-top: 12rem;
+    margin-top: 8rem;
 }
 
 .child-div figure img {
@@ -38,7 +38,7 @@
 
 input {
   /* display: block; */
-    min-width: 40rem;
+    min-width: 36rem;
     height: 3rem;
     padding: 1.4rem 1.5rem;
     font-size: 1.4rem;
@@ -106,11 +106,11 @@ input:focus {
 
 .eachItem {
     background: #fff;
-    padding: 0.9rem 1rem;
+    padding: 0.6rem 1rem;
     border-radius: 0.5rem;
     margin-bottom: 0.7rem;
     margin-left: 1rem;
-    min-width: 40rem;
+    min-width: 36rem;
     word-break: break-word;
     background: rgb(85, 41, 220);
     display: flex;
